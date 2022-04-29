@@ -1,0 +1,17 @@
+.contact-form {
+  border-left: 0;
+  border-top: 0;
+  border-right: 0;
+}
+.contact {
+  border: 1px solid;
+}
+.contact-textarea {
+  border-left: 0;
+  border-top: 0;
+  border-right: 0;
+}
+.contact-form:focus {
+  border-left: 0;
+  outline: none;
+}
