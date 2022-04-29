@@ -5,10 +5,16 @@ import auth from '../../../firebase.init';
 import "./Register.css"
 import SocialLogin from '../SocialLogin/SocialLogin';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { useSendEmailVerification } from 'react-firebase-hooks/auth';
 const Register = () => {
     const navigate = useNavigate();
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
+
+
+    const [sendEmailVerification, sending, error] = useSendEmailVerification(
+        auth
+    );
     const registerEmail = event => {
         event.preventDefault();
         const cPassword = event.target.cPassword.value;
@@ -23,9 +29,8 @@ const Register = () => {
                 .then((userCredential) => {
                     // Signed in 
                     const user = userCredential.user;
-                    // if (user) {
-                    //     navigate(from, { replace: true });
-                    // }
+                    sendEmailVerification()
+                    alert("We have sended a email verification.")
                     console.log(user)
 
                 })
@@ -57,7 +62,7 @@ const Register = () => {
                     <Form.Control type="password" name="cPassword" placeholder="Confirm Password" />
                 </Form.Group>
                 <Button className="w-100" variant="primary" type="submit">
-                    Submit
+                    Register
                 </Button>
 
             </Form>

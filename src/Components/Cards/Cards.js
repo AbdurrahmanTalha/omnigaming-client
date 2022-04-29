@@ -4,7 +4,7 @@ import ComputerCards from '../Card/ComputerCards';
 const Cards = () => {
     const [computers, setComputers] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/item')
+        fetch('http://localhost:5000/item/home')
             .then(res => res.json())
             .then(data => setComputers(data))
     }, [])
@@ -13,7 +13,7 @@ const Cards = () => {
             {
                 computers.map(computer => <ComputerCards computer={computer} key={computer._id}></ComputerCards>)
             }
-            
+
         </div>
     );
 };

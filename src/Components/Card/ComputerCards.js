@@ -1,7 +1,15 @@
 import React from 'react';
 import { Button, Card } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 const ComputerCards = computer => {
+    console.log(computer);
+    const navigate = useNavigate();
+
+    const navigateToServiceDetail = id => {
+        navigate(`/inventory/${id}`);
+        // console.log(id)
+    }
     return (
         <div className="col-md-4 my-5">
             <Card >
@@ -12,7 +20,7 @@ const ComputerCards = computer => {
                     <p>${computer.computer.price}</p>
                     <p>Quantity: {computer.computer.quantity}</p>
                     <p>Manufacturer: {computer.computer.supplier}</p>
-                    <Button variant="primary">Update</Button>
+                    <Button onClick={() => navigateToServiceDetail(computer.computer._id)} variant="primary">Update</Button>
                 </Card.Body>
             </Card>
         </div>
