@@ -4,7 +4,7 @@ import { createUserWithEmailAndPassword, sendEmailVerification } from "firebase/
 import auth from '../../../firebase.init';
 import "./Register.css"
 import SocialLogin from '../SocialLogin/SocialLogin';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useSendEmailVerification } from 'react-firebase-hooks/auth';
 const Register = () => {
     const navigate = useNavigate();
@@ -31,7 +31,10 @@ const Register = () => {
                     const user = userCredential.user;
                     sendEmailVerification()
                     alert("We have sended a email verification.")
-                    console.log(user)
+                    if (user.providerData[0]?.providerId === 'password' && user.emailVerified) {
+
+                        navigate(from, { replace: true });
+                    }
 
                 })
                 .catch((error) => {
@@ -61,6 +64,7 @@ const Register = () => {
                     <Form.Label>Confirm Password</Form.Label>
                     <Form.Control type="password" name="cPassword" placeholder="Confirm Password" />
                 </Form.Group>
+                <p>Already Have a account? <Link to="/login">Login!</Link></p>
                 <Button className="w-100" variant="primary" type="submit">
                     Register
                 </Button>

@@ -3,7 +3,6 @@ import { Button, Card } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
 const ComputerCards = computer => {
-    console.log(computer);
     const navigate = useNavigate();
 
     const navigateToServiceDetail = id => {

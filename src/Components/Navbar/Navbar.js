@@ -18,15 +18,16 @@ const Navbar = () => {
                 <h2><span className="text-info">O</span>mniGaming</h2>
             </div>
             <ul className="nav-items d-flex">
-                <li className="nav-item"><Link to="/">Home</Link></li>
+            <li className="nav-item"><Link to="/">Home</Link></li>
                 <li className="nav-item"><Link to="#">Items</Link></li>
                 <li className="nav-item"><Link to="#">Inventory</Link></li>
                 <li>{
                     user ?
                         <button className="btn btn-primary" onClick={handleSignOut}>SignOut</button>
                         :
-                        <Link className="btn btn-primary" to="/register">Login</Link>
-                }</li>
+                        <Link className="btn btn-primary" to="/login">Login</Link>
+                   }
+                </li>
             </ul>
         </nav>
     );

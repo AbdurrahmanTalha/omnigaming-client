@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
 
@@ -40,7 +40,7 @@ const Login = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control onBlur={(e) => setPass(e.target.value)} type="password" name="password" placeholder="Password" />
                 </Form.Group>
-
+                <p>Don't Have a account? <Link to="/register">Create one now!</Link></p>
                 <Button className="w-100" variant="primary" type="submit">
                     Login
                 </Button>
