@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const ManageInvitem = items => {
     const [item, setItem] = useState([])
-    // console.log(item.item)
+    console.log(item)
     useEffect(() => {
         fetch('http://localhost:5000/item')
             .then(res => res.json())
@@ -23,6 +23,7 @@ const ManageInvitem = items => {
                 .then(data => {
                     if (data.deletedCount > 0) {
                         const remaining = item.filter(user => user._id !== id);
+                        
                         setItem(remaining);
                     }
                 })
