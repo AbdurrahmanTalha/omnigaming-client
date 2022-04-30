@@ -38,6 +38,7 @@ const ManageInvitem = items => {
                     <p>${items.item.price}</p>
                     <p>Quantity: {items.item.quantity}</p>
                     <p>Manufacturer: {items.item.supplier}</p>
+                    <p>Email: {items.item.email}</p>
                 </Card.Body>
 
                 <button onClick={() => handleUserDelete(items.item._id)} className="btn btn-primary w-50 mx-auto mb-3">Remove</button>

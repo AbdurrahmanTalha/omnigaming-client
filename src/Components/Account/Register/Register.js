@@ -33,7 +33,7 @@ const Register = () => {
                     console.log(user)
                     toast("We have sended a email verification.")
                     sendEmailVerification()
-
+                    navigate('/')
 
                 })
                 .catch((error) => {

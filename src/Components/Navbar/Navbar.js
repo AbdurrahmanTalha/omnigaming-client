@@ -24,7 +24,7 @@ const Navbar = () => {
                     user && <>
                         <li className="nav-item"><Link to="/addItem">Add Item</Link></li>
                         <li className="nav-item"><Link to="/inventory">Manage Items</Link></li>
-                        <li className="nav-item"><Link to="#">My Items</Link></li>
+                        <li className="nav-item"><Link to="/myItems">My Items</Link></li>
                     </>
                 }
                 <li className="nav-item"><Link to="/blogs">Blogs</Link></li>

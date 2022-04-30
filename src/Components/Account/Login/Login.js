@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
@@ -15,21 +16,17 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
-    const [accountErr, setAccountErr] = useState('')
     const navigate = useNavigate();
     const location = useLocation();
 
     let from = location.state?.from?.pathname || "/";
-    // if (error) {
-    //     return <p className="text-danger fw-bold">{error.message}</p>
-    // }
-    const loginWithEmail = e => {
+
+    const loginWithEmail = async e => {
         e.preventDefault()
-        signInWithEmailAndPassword(email, pass)
-        setAccountErr('')
         toast("Successfully Logged In")
-    }
-    if (user) {
+        await signInWithEmailAndPassword(email, pass);
+        const { data } = await axios.post('http://localhost:5000/login', { email });
+        localStorage.setItem('accessToken', data.accessToken)
         navigate(from, { replace: true });
     }
     return (
@@ -48,7 +45,7 @@ const Login = () => {
 
                 <p>Don't Have a account? <Link to="/register">Create one now!</Link></p>
                 {
-                    error ? <p className="text-danger fw-bold">{error.message}</p> :  <p className="text-danger fw-bold"></p>
+                    error ? <p className="text-danger fw-bold">{error.message}</p> : <p className="text-danger fw-bold"></p>
                 }
                 <Button className="w-100" variant="primary" type="submit">
                     Login

@@ -14,6 +14,7 @@ import AddItem from './Components/AddItem/AddItem';
 import Blogs from './Components/Blogs/Blogs';
 import NotFound from './Components/NotFound/NotFound';
 import 'react-toastify/dist/ReactToastify.css';
+import MyItems from './Components/MyItems/MyItems';
 function App() {
   return (
     <div className="App">
@@ -26,6 +27,7 @@ function App() {
         <Route path="/inventory" element={<RequireAuth><ManageInv></ManageInv></RequireAuth>}></Route>
         <Route path="/addItem" element={<RequireAuth><AddItem></AddItem></RequireAuth>}></Route>
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
+        <Route path="/myItems" element={<MyItems></MyItems>}></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
 
       </Routes>
