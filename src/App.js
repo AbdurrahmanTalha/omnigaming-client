@@ -11,6 +11,7 @@ import RequireAuth from './Components/Account/RequireAuth/RequireAuth';
 import ManageItem from './Components/ManageItem/ManageItem';
 import Login from './Components/Account/Login/Login';
 import ManageInv from './Components/ManageInv/ManageInv';
+import AddItem from './Components/AddItem/AddItem';
 function App() {
   return (
     <div className="App">
@@ -21,6 +22,7 @@ function App() {
         <Route path="/inventory/:itemId" element={<RequireAuth><ManageItem></ManageItem></RequireAuth>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/inventory" element={<ManageInv></ManageInv>}></Route>
+        <Route path="/addItem" element={<AddItem></AddItem>}></Route>
       </Routes>
       <Footer></Footer>
 

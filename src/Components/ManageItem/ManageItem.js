@@ -6,7 +6,6 @@ const ManageItem = () => {
     const { itemId } = useParams();
     const [item] = useItemDetail(itemId);
 
-
     const handleUpdateUser = event => {
         event.preventDefault()
         const quantity = item.quantity - 1;
@@ -22,15 +21,15 @@ const ManageItem = () => {
             .then(res => res.json())
             .then(data => {
                 console.log('success', data);
-
             })
+        window.location.reload(false);
     }
 
     const handleStockUp = event => {
         const oldQuantity = item.quantity;
         const newQuantity = event.target.quantity.value;
         const quantity = Number(oldQuantity) + Number(newQuantity);
-        console.log(quantity)
+        
         event.preventDefault()
         const updatedQuantity = { quantity };
         const url = `http://localhost:5000/item/${itemId}`;
@@ -43,9 +42,9 @@ const ManageItem = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log('success', data);
-
+                event.target.reset();
             })
+        window.location.reload(false);
     }
     return (
         <div>
@@ -62,7 +61,7 @@ const ManageItem = () => {
                 <button type="submit" className="btn btn-primary" name="stock" >StockUp</button>
             </form>
 
-            <Link to="/inventory" className="btn btn-primary">manage Inventory</Link>
+            <Link to="/inventory" className="btn btn-primary">Manage Inventory</Link>
 
         </div>
     );

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import ComputerCards from '../Card/ComputerCards';
 
 const Cards = () => {
@@ -9,10 +10,11 @@ const Cards = () => {
             .then(data => setComputers(data))
     }, [])
     return (
-        <div className="row mx-auto d-flex align-items-center justify-content-center my-5">
+        <div className="row mx-auto d-flex align-items-center justify-content-center my-5 container mx-auto">
             {
                 computers.map(computer => <ComputerCards computer={computer} key={computer._id}></ComputerCards>)
             }
+            <Link to="/inventory" className="btn btn-primary mx-auto w-50">Manage Inventory</Link>
 
         </div>
     );
