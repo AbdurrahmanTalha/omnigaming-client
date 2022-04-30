@@ -57,12 +57,14 @@ const ManageItem = () => {
     }
     return (
         <div>
+            <img src={item?.img} alt="" />
             <h2>{item?.name}</h2>
             <h2>{item?._id}</h2>
             <p>{item?.desc}</p>
             <p>{item?.price}</p>
             <p>{item?.quantity}</p>
             <p>{item?.supplier}</p>
+            <p>{item?.email}</p>
             <button className="btn btn-primary" onClick={handleUpdateUser}>Deliver</button>
 
             <form onSubmit={handleStockUp}>

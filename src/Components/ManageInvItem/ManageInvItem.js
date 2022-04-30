@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 
 const ManageInvitem = items => {
     const [item, setItem] = useState([])
-    console.log(item)
     useEffect(() => {
         fetch('http://localhost:5000/item')
             .then(res => res.json())

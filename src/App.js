@@ -12,6 +12,8 @@ import ManageItem from './Components/ManageItem/ManageItem';
 import Login from './Components/Account/Login/Login';
 import ManageInv from './Components/ManageInv/ManageInv';
 import AddItem from './Components/AddItem/AddItem';
+import Blogs from './Components/Blogs/Blogs';
+import NotFound from './Components/NotFound/NotFound';
 function App() {
   return (
     <div className="App">
@@ -23,6 +25,9 @@ function App() {
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/inventory" element={<RequireAuth><ManageInv></ManageInv></RequireAuth>}></Route>
         <Route path="/addItem" element={<RequireAuth><AddItem></AddItem></RequireAuth>}></Route>
+        <Route path="/blogs" element={<Blogs></Blogs>}></Route>
+        <Route path="*" element={<NotFound></NotFound>}></Route>
+
       </Routes>
       <Footer></Footer>
 
