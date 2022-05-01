@@ -44,7 +44,7 @@ const Register = () => {
                 .catch((error) => {
                     const errorMessage = error.message;
                     setAccountErr(errorMessage);
-                    // ..
+                  
                 });
         }
     }

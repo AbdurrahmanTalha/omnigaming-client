@@ -27,7 +27,6 @@ const ManageInvitem = items => {
                 })
         }
     }
-    console.log(items)
     return (
         <div className="col-md-4 my-5">
             <Card >

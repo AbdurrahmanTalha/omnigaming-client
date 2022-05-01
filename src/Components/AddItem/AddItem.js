@@ -24,15 +24,15 @@ const AddItem = () => {
         <div className="w-50 mx-auto">
             <h2>Add a computer</h2>
             <form onSubmit={handleSubmit(onSubmit)} className="d-flex flex-column my-5">
-                <input placeholder="Computer Name" className="mb-2" readOnly type="email" value={user.email} {...register("email")} required />
-                <input placeholder="Computer Name" type="text" className="mb-2" {...register("name", { required: true })} />
-                <input placeholder="Supplier" type="text" className="mb-2" {...register("supplier", { required: true })} />
+                <input placeholder="Computer Name" className="mb-2 form-control" readOnly type="email" value={user.email} {...register("email")} required />
+                <input placeholder="Computer Name" type="text" className="mb-2 form-control" {...register("name", { required: true })} />
+                <input placeholder="Supplier" type="text" className="mb-2 form-control" {...register("supplier", { required: true })} />
 
-                <textarea placeholder="Description" className="mb-2"{...register("desc", { required: true })} />
+                <textarea placeholder="Description" className="mb-2 form-control"{...register("desc", { required: true })} />
 
-                <input placeholder="Price" type="number" className="mb-2"{...register("price", { min: 400 })} />
-                <input placeholder="Quantity" type="number" className="mb-2"{...register("quantity", { min: 5, required: true })} />
-                <input placeholder="Photo URL" type="text" className="mb-2"{...register("img", { required: true })} />
+                <input placeholder="Price" type="number" className="mb-2 form-control"{...register("price", { min: 400 })} />
+                <input placeholder="Quantity" type="number" className="mb-2 form-control"{...register("quantity", { min: 5, required: true })} />
+                <input placeholder="Photo URL" type="text" className="mb-2 form-control"{...register("img", { required: true })} />
 
                 <input type="submit" value="Add Service" className="btn btn-primary" />
             </form>

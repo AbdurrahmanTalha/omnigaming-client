@@ -33,8 +33,8 @@ const MyItems = () => {
     }, [user, items])
     return (
         <div>
-            <h2>My Items</h2>
-            <div className="row container">
+            <h2 className="mt-3">My Items</h2>
+            <div className="row mx-auto container">
                 {
                     items.map(items => <Mycards key={items._id} items={items}></Mycards>)
                 }

@@ -15,6 +15,8 @@ import NotFound from './Components/NotFound/NotFound';
 import 'react-toastify/dist/ReactToastify.css';
 import MyItems from './Components/MyItems/MyItems';
 import Header from './Components/Navbar/Navbar';
+import Awards from './Components/Awards/Awards';
+
 function App() {
   return (
     <div className="App">
@@ -29,6 +31,7 @@ function App() {
         <Route path="/addItem" element={<RequireAuth><AddItem></AddItem></RequireAuth>}></Route>
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route path="/myItems" element={<MyItems></MyItems>}></Route>
+        <Route path="/awards" element={<Awards></Awards>}></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
 
       </Routes>

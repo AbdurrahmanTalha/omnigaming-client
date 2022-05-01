@@ -6,6 +6,7 @@ import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
+import Loading from '../../Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Login = () => {
@@ -17,9 +18,10 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+
+    const [err, setErr] = useState('')
     const navigate = useNavigate();
     const location = useLocation();
-    const [err, setErr] = useState('')
     let from = location.state?.from?.pathname || "/";
     // Login
     const loginWithEmail = async e => {
@@ -31,8 +33,12 @@ const Login = () => {
         localStorage.setItem('accessToken', data.accessToken)
         navigate(from, { replace: true });
     }
-    if(user) {
+    if (user) {
         toast("Successfully Logged In")
+    }
+    
+    if (loading) {
+        return <Loading></Loading>
     }
     // Forgot Password
     const handleForgetPassword = () => {
@@ -58,7 +64,7 @@ const Login = () => {
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control ref={passRef} type="password" required name="password" placeholder="Password"  />
+                    <Form.Control ref={passRef} type="password" required name="password" placeholder="Password" />
                 </Form.Group>
 
                 <p>Don't Have a account? <Link to="/register">Create one now!</Link></p>

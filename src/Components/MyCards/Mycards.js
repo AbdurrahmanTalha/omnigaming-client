@@ -29,8 +29,8 @@ const Mycards = items => {
     }
     return (
         <div className="col-md-4 my-5">
-            <Card >
-                <Card.Img variant="top" className="img-fluid" src={items.items.img} />
+            <Card>
+                <Card.Img variant="top" className="img-fluid w-100" src={items.items.img} />
                 <Card.Body>
                     <Card.Title>{items.items.name}</Card.Title>
                     <p>Desc: {items.items.desc}</p>

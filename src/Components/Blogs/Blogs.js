@@ -9,49 +9,22 @@ const Blogs = () => {
                 <Accordion.Item eventKey="0">
                     <Accordion.Header>Difference Between JavaScript and nodejs</Accordion.Header>
                     <Accordion.Body>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                        est laborum.
+                        Javascript is a programming lanauge. It is running in any web browser with a proper browser engine. And node js is an interpreter and enviroment for Js with specifig usefull libraies Wich javascript Developers can user sepratley.
+                        JavaScript is mainly used for client side activity, like possible validation or refreshing the page in a specfig interval or provide some dynamic changes in the web pages without the client refreshing the page. It mainly used for accessing or performing any non-blocking operation of any operating system, like creating or executing a shell script or accessing any hardware-specific information or running any backend job.
+
                     </Accordion.Body>
                 </Accordion.Item>
+
                 <Accordion.Item eventKey="1">
-                    <Accordion.Header>When should you use nodejs and when should you use mongodb</Accordion.Header>
-                    <Accordion.Body>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                        est laborum.
-                    </Accordion.Body>
-                </Accordion.Item>
-                <Accordion.Item eventKey="2">
                     <Accordion.Header>Differences between sql and nosql databases.</Accordion.Header>
                     <Accordion.Body>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                        est laborum.
+                        sql has Relational database management systems. while NoSql has Non relional Or distributed database system. Sql databases have fixed ot static predifined schema, and Nosql Has Dynamic Schema. SQL database is not suited for hierachical data storage. while NoSql Database are bet suited for hierachical  data storage.
                     </Accordion.Body>
                 </Accordion.Item>
                 <Accordion.Item eventKey="2">
                     <Accordion.Header>What is the purpose of jwt and how does it work</Accordion.Header>
                     <Accordion.Body>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                        est laborum.
+                        JSON Web Token, is an open standard used to share security information between two parties — a client and a server. Every jwt contains encoded json Objects including a set of Claims. JWTs are signed using a cryptographic algorithm to ensure that the claims cannot be altered after the token is issued. Jwt can be used for authorization or authentication.
                     </Accordion.Body>
                 </Accordion.Item>
             </Accordion>

@@ -16,7 +16,7 @@ const Header = () => {
     
     return (
      
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Navbar collapseOnSelect expand="lg" bg="dark" sticky="top" variant="dark">
             <Container>
                 <LinkContainer to="/">
                     <Navbar.Brand href="/">OmniGaming</Navbar.Brand>
@@ -42,6 +42,9 @@ const Header = () => {
                         }
                         <LinkContainer to="/blogs">
                             <Nav.Link>Blogs</Nav.Link>
+                        </LinkContainer>
+                        <LinkContainer to="/awards">
+                            <Nav.Link>Awards</Nav.Link>
                         </LinkContainer>
                         {
                             user ?

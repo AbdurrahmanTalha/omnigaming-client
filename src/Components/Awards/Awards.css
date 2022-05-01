@@ -1,0 +1,11 @@
+.borderRight{
+    border-right: 5px solid #010101;
+}
+.borderLeft{
+    border-left: 5px solid #010101;
+}
+.borderClass{
+    border-left: 6px double #010101;
+    border-right: 6px double #010101;
+    padding: 0px 10px;
+}
