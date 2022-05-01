@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Button, Card, ListGroup, ListGroupItem } from 'react-bootstrap';
 import { Link, useParams } from 'react-router-dom';
 import useItemDetail from '../../Hooks/useItemDetail';
 
@@ -56,20 +57,32 @@ const ManageItem = () => {
         // window.location.reload(false);
     }
     return (
-        <div>
-            <img src={item?.img} alt="" />
-            <h2>{item?.name}</h2>
-            <h2>{item?._id}</h2>
-            <p>{item?.desc}</p>
-            <p>{item?.price}</p>
-            <p>{item?.quantity}</p>
-            <p>{item?.supplier}</p>
-            <p>{item?.email}</p>
-            <button className="btn btn-primary" onClick={handleUpdateUser}>Deliver</button>
+        <div >
+            <Card style={{ width: '18rem' }} className="mx-auto mb-4">
+                <Card.Img variant="top" src={item?.img} />
+                <Card.Body>
+                    <Card.Title>{item?.name}</Card.Title>
+                    <Card.Text>
+                        {item?.desc}
+                    </Card.Text>
+                </Card.Body>
+                <ListGroup className="list-group-flush">
+                    <ListGroupItem>ID: {item?._id}</ListGroupItem>
+                    <ListGroupItem>Price: ${item?.price}</ListGroupItem>
+                    <ListGroupItem>Quantity: {item?.quantity}</ListGroupItem>
+                    <ListGroupItem>Supplier: {item?.supplier}</ListGroupItem>
+                    <ListGroupItem>Email: {item?.email}</ListGroupItem>
+                </ListGroup>
+                <Card.Body>
+                    <Button className="btn btn-primary" onClick={handleUpdateUser}>Deliver</Button>
 
-            <form onSubmit={handleStockUp}>
-                <input type="number" name="quantity" />
-                <button type="submit" className="btn btn-primary" name="stock" >StockUp</button>
+                </Card.Body>
+            </Card>
+
+
+            <form onSubmit={handleStockUp} className="mb-5">
+                <input type="number" name="quantity" placeholder="Stock Number Add" />
+                <button type="submit" className="btn btn-primary ms-2" name="stock" >StockUp</button>
             </form>
 
             <Link to="/inventory" className="btn btn-primary">Manage Inventory</Link>

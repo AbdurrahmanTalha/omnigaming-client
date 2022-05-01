@@ -34,7 +34,7 @@ const MyItems = () => {
     return (
         <div>
             <h2>My Items</h2>
-            <div className="row">
+            <div className="row container">
                 {
                     items.map(items => <Mycards key={items._id} items={items}></Mycards>)
                 }
