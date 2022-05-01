@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const ManageInvitem = items => {
     const [item, setItem] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/item')
+        fetch('https://morning-thicket-30795.herokuapp.com/item')
             .then(res => res.json())
             .then(data => setItem(data));
     }, []);
@@ -14,7 +14,7 @@ const ManageInvitem = items => {
         const proceed = window.confirm('Are you sure you want to delete?');
         if (proceed) {
             console.log('deleting user with id, ', id);
-            const url = `http://localhost:5000/item/${id}`;
+            const url = `https://morning-thicket-30795.herokuapp.com/item/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

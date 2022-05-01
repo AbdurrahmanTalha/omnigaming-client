@@ -2,7 +2,6 @@ import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './Components/Home/Home';
-import Navbar from './Components/Navbar/Navbar';
 import Footer from './Components/Footer/Footer';
 import Register from './Components/Account/Register/Register';
 import { ToastContainer } from 'react-toastify';
@@ -15,10 +14,11 @@ import Blogs from './Components/Blogs/Blogs';
 import NotFound from './Components/NotFound/NotFound';
 import 'react-toastify/dist/ReactToastify.css';
 import MyItems from './Components/MyItems/MyItems';
+import Header from './Components/Navbar/Navbar';
 function App() {
   return (
     <div className="App">
-      <Navbar></Navbar>
+      <Header></Header>
       <Routes>
         {/* Routes */}
         <Route path="/" element={<Home></Home>}></Route>

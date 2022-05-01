@@ -6,7 +6,7 @@ const AddItem = () => {
     const [user] = useAuthState(auth);
     const { register, handleSubmit } = useForm();
     const onSubmit = (data, event) => {
-        fetch('http://localhost:5000/item', {
+        fetch('https://morning-thicket-30795.herokuapp.com/item', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

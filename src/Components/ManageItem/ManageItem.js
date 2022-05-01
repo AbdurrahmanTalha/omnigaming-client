@@ -7,7 +7,7 @@ const ManageItem = () => {
     const { itemId } = useParams();
     const [item, setItem] = useState();
     useEffect(() => {
-        const url = `http://localhost:5000/item/${itemId}`;
+        const url = `https://morning-thicket-30795.herokuapp.com/item/${itemId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -20,7 +20,7 @@ const ManageItem = () => {
         event.preventDefault()
         const quantity = item.quantity - 1;
         const updatedQuantity = { quantity };
-        const url = `http://localhost:5000/item/${itemId}`;
+        const url = `https://morning-thicket-30795.herokuapp.com/item/${itemId}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -42,7 +42,7 @@ const ManageItem = () => {
 
         event.preventDefault()
         const updatedQuantity = { quantity };
-        const url = `http://localhost:5000/item/${itemId}`;
+        const url = `https://morning-thicket-30795.herokuapp.com/item/${itemId}`;
         fetch(url, {
             method: 'PUT',
             headers: {

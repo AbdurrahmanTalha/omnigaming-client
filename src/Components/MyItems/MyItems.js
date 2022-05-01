@@ -11,22 +11,22 @@ const MyItems = () => {
     const [user] = useAuthState(auth)
     const [items, setItem] = useState([])
     const navigate = useNavigate();
-    
+
     useEffect(() => {
         const getItems = async () => {
             const email = user.email
-            const url = `http://localhost:5000/myItem?email=${email}`            
-          
+            const url = `https://morning-thicket-30795.herokuapp.com/myItem?email=${email}`
+
             try {
                 const { data } = await axiosPrivate.get(url);
                 setItem(data)
             }
-            catch(error) {
+            catch (error) {
                 console.log(error)
                 if (error.response.status === 401 || error.response.status === 403) {
                     signOut(auth)
                     navigate('/login')
-                } 
+                }
             }
         }
         getItems()
