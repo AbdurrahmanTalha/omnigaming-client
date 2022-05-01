@@ -2,12 +2,12 @@ import React from 'react';
 import "./AboutUs.css"
 const AboutUs = () => {
     return (
-        <div>
-            <h2 className="mb-3 text-center d-flex justify-content-center align-items-center">About us</h2>
-            <div className="row my-5 container">
+        <div className="my-5">
+            <h2 className="mb-3 text-center d-flex justify-content-center align-items-center">What We Do</h2>
+            <div className="row my-5 container d-flex justify-content-center align-items-center">
                 <div className="col-md-5">
                     <div className="about-detail w-50 mx-auto d-flex justify-content-center align-items-center mt-5">
-                        <p className="text">Hello There! I am Talha. Im a almost a full stack developer. Im 11 years old and I want to become one of the biggest full stack developers to ever exist.</p>
+                        <p className="text">Hello There! I am Talha. In this Website We sell you Computes</p>
                     </div>
                 </div>
                 <div className="col-md-5">

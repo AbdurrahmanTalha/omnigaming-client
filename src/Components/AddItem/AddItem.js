@@ -24,7 +24,7 @@ const AddItem = () => {
         <div className="w-50 mx-auto">
             <h2>Add a computer</h2>
             <form onSubmit={handleSubmit(onSubmit)} className="d-flex flex-column my-5">
-                <input placeholder="Computer Name" className="mb-2" readOnly type="email" value={user.email} {...register("email")} required  />
+                <input placeholder="Computer Name" className="mb-2" readOnly type="email" value={user.email} {...register("email")} required />
                 <input placeholder="Computer Name" type="text" className="mb-2" {...register("name", { required: true })} />
                 <input placeholder="Supplier" type="text" className="mb-2" {...register("supplier", { required: true })} />
 

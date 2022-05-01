@@ -48,7 +48,7 @@ const Register = () => {
             <Form onSubmit={registerEmail}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control className="" type="email" name="email" placeholder="Enter email" />
+                    <Form.Control className="" type="email" name="email" required placeholder="Enter email" />
                     <Form.Text className="text-muted">
                         We'll never share your email with anyone else.
                     </Form.Text>
@@ -56,11 +56,11 @@ const Register = () => {
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" name="password" placeholder="Password" />
+                    <Form.Control type="password" name="password" required placeholder="Password" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Confirm Password</Form.Label>
-                    <Form.Control type="password" name="cPassword" placeholder="Confirm Password" />
+                    <Form.Control type="password" name="cPassword" required placeholder="Confirm Password" />
                 </Form.Group>
                 <p className="text-danger font-bold">{accountErr}</p>
                 <p>Already Have a account? <Link to="/login">Login!</Link></p>
@@ -70,7 +70,6 @@ const Register = () => {
 
             </Form>
             <SocialLogin></SocialLogin>
-            <ToastContainer></ToastContainer>
         </div>
     );
 };
