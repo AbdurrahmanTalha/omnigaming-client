@@ -10,7 +10,7 @@ const ManageInvitem = items => {
             .then(data => setItem(data));
     }, []);
 
-    const handleUserDelete = id => {
+    const handleItemDelete = id => {
         const proceed = window.confirm('Are you sure you want to delete?');
         if (proceed) {
             console.log('deleting user with id, ', id);
@@ -22,7 +22,6 @@ const ManageInvitem = items => {
                 .then(data => {
                     if (data.deletedCount > 0) {
                         const remaining = item.filter(user => user._id !== id);
-                        
                         setItem(remaining);
                     }
                 })
@@ -42,7 +41,7 @@ const ManageInvitem = items => {
                     <p>Email: {items.item.email}</p>
                 </Card.Body>
 
-                <button onClick={() => handleUserDelete(items.item._id)} className="btn btn-primary w-50 mx-auto mb-3">Remove</button>
+                <button onClick={() => handleItemDelete(items.item._id)} className="btn btn-primary w-50 mx-auto mb-3">Remove</button>
             </Card>
         </div>
 

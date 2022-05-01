@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { sendPasswordResetEmail } from 'firebase/auth';
 import React, { useRef, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
@@ -18,9 +19,9 @@ const Login = () => {
     ] = useSignInWithEmailAndPassword(auth);
     const navigate = useNavigate();
     const location = useLocation();
-
+    const [err, setErr] = useState('')
     let from = location.state?.from?.pathname || "/";
-
+    // Login
     const loginWithEmail = async e => {
         const email = emailRef.current.value;;
         const pass = passRef.current.value;
@@ -32,6 +33,19 @@ const Login = () => {
     }
     if(user) {
         toast("Successfully Logged In")
+    }
+    // Forgot Password
+    const handleForgetPassword = () => {
+        const email = emailRef.current.value;
+        sendPasswordResetEmail(auth, email)
+            .then(() => {
+                toast("We have sended you a password reset Email")
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                setErr(errorMessage)
+            });
     }
     return (
         <div className="w-50 mx-auto my-5">
@@ -48,8 +62,12 @@ const Login = () => {
                 </Form.Group>
 
                 <p>Don't Have a account? <Link to="/register">Create one now!</Link></p>
+                <p>Forgot Your Password? <button onClick={handleForgetPassword}>Click me</button></p>
                 {
                     error ? <p className="text-danger fw-bold">{error.message}</p> : <p className="text-danger fw-bold"></p>
+                }
+                {
+                    err ? <p className="text-danger fw-bold">{err}</p> : <p className="text-danger fw-bold"></p>
                 }
                 <Button className="w-100" variant="primary" type="submit">
                     Login

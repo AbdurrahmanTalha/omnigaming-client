@@ -1,4 +1,4 @@
-import axios from 'axios';
+
 import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -11,10 +11,12 @@ const MyItems = () => {
     const [user] = useAuthState(auth)
     const [items, setItem] = useState([])
     const navigate = useNavigate();
+    
     useEffect(() => {
         const getItems = async () => {
             const email = user.email
-            const url = `http://localhost:5000/myItem?email=${email}`
+            const url = `http://localhost:5000/myItem?email=${email}`            
+          
             try {
                 const { data } = await axiosPrivate.get(url);
                 setItem(data)
@@ -28,7 +30,7 @@ const MyItems = () => {
             }
         }
         getItems()
-    }, [user])
+    }, [user, items])
     return (
         <div>
             <h2>My Items</h2>

@@ -20,6 +20,7 @@ function App() {
     <div className="App">
       <Navbar></Navbar>
       <Routes>
+        {/* Routes */}
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
         <Route path="/inventory/:itemId" element={<RequireAuth><ManageItem></ManageItem></RequireAuth>}></Route>

@@ -8,12 +8,12 @@ const Mycards = items => {
         fetch('http://localhost:5000/item')
             .then(res => res.json())
             .then(data => setItem(data));
-    }, []);
+    }, [item]);
 
-    const handleUserDelete = id => {
+    const handleItemDelete = id => {
         const proceed = window.confirm('Are you sure you want to delete?');
         if (proceed) {
-            console.log('deleting user with id, ', id);
+            console.log('deleting item with id, ', id);
             const url = `http://localhost:5000/item/${id}`;
             fetch(url, {
                 method: 'DELETE'
@@ -22,7 +22,6 @@ const Mycards = items => {
                 .then(data => {
                     if (data.deletedCount > 0) {
                         const remaining = item.filter(user => user._id !== id);
-
                         setItem(remaining);
                     }
                 })
@@ -41,7 +40,7 @@ const Mycards = items => {
                     <p>Email: {items.items.email}</p>
                 </Card.Body>
 
-                <button onClick={() => handleUserDelete(items.items._id)} className="btn btn-primary w-50 mx-auto mb-3">Remove</button>
+                <button onClick={() => handleItemDelete(items.items._id)} className="btn btn-primary w-50 mx-auto mb-3">Remove</button>
             </Card>
         </div>
     );

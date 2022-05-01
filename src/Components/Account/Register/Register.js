@@ -7,6 +7,8 @@ import SocialLogin from '../SocialLogin/SocialLogin';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useSendEmailVerification } from 'react-firebase-hooks/auth';
 import { toast, ToastContainer } from 'react-toastify';
+import axios from 'axios';
+import Loading from '../../Loading/Loading';
 const Register = () => {
     const navigate = useNavigate();
     const location = useLocation();
@@ -18,6 +20,7 @@ const Register = () => {
         auth
     );
     const registerEmail = event => {
+        // register
         event.preventDefault();
         const cPassword = event.target.cPassword.value;
         const email = event.target.email.value;
@@ -31,9 +34,11 @@ const Register = () => {
                     // Signed in 
                     const user = userCredential.user;
                     console.log(user)
-                    toast("We have sended a email verification.")
+                    if (user) {
+                        toast("We have sended a email verification.")
+                    }
                     sendEmailVerification()
-                    navigate('/')
+                    navigate(from, { replace: true })
 
                 })
                 .catch((error) => {
@@ -42,6 +47,9 @@ const Register = () => {
                     // ..
                 });
         }
+    }
+    if (sending) {
+        return <Loading></Loading>
     }
     return (
         <div className="w-50 my-5 mx-auto">
