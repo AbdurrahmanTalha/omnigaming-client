@@ -10,12 +10,12 @@ const Awards = () => {
                     <img alt='awards' className='w-100 img-fluid' src='https://cis.ieee.org/images/files/Branding/award.jpg' />
                 </div>
                 <div className='col-md-6 borderRight ps-5 mt-sm-4'>
-                    <p className='fs-6 text-muted'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    <h2 className='fs-2 text-muted'>Best Computer seller In 2021.</h2>
                 </div>
             </div>
             <div className='row d-flex align-items-center justify-content-center my-5'>
                 <div className='col-md-6 borderLeft pe-5 mb-sm-4'>
-                    <p className='fs-6 text-muted'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    <h2 className='fs-2 text-muted'>2nd Fastest Computer Made</h2>
 
                 </div>
                 <div className='col-md-6 '>
@@ -27,7 +27,7 @@ const Awards = () => {
                     <img alt='awards' className='w-100 img-fluid' src='https://www.iflr.com/Media/images/iflr/1-awards/AdobeStock_135053351.jpeg' />
                 </div>
                 <div className='col-md-6 borderRight ps-5 mt-sm-4'>
-                    <p className='fs-6 text-muted '>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    <h2 className='fs-2 text-muted'>Most Sold Computers in the last decade</h2>
                 </div>
             </div>
         </div>

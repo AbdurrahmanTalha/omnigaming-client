@@ -8,12 +8,12 @@ const WhatYouThink = () => {
             <Form className="mx-auto w-50 mb-5">
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     
-                    <Form.Control type="name" placeholder="Enter Name" />
+                    <Form.Control type="name" className="form-control" placeholder="Enter Name" />
 
                 </Form.Group>
 
                 <FloatingLabel controlId="floatingTextarea" label="Your Review" className="mb-3">
-                    <Form.Control as="textarea" placeholder="Your Review" />
+                    <Form.Control as="textarea" className="form-control" placeholder="Your Review" />
                 </FloatingLabel>
 
                 <Button variant="primary" type="submit" className="w-100">
