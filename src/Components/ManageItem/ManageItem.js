@@ -22,12 +22,11 @@ const ManageItem = () => {
             console.log(item.quantity);
             toast("Out of Stock")
         } else {
-
             const quantity = item.quantity - 1;
-            const updatedQuantity = { quantity };
+            const sold = Number(item?.sold + 1)
+            const updatedQuantity = { quantity, sold };
             const url = `https://morning-thicket-30795.herokuapp.com/item/${itemId}`;
-
-            console.log(quantity);
+            console.log(quantity, sold);
             fetch(url, {
                 method: 'PUT',
                 headers: {
@@ -40,7 +39,7 @@ const ManageItem = () => {
                     console.log('success', data);
                 })
 
-            toast(`Successfully purchased ${item.name}`)
+            // toast(`Successfully purchased ${item.name}`)
         }
 
     }
@@ -84,6 +83,7 @@ const ManageItem = () => {
                     {
                         item?.quantity < 1 ? <ListGroupItem>Out Of Stock</ListGroupItem> : <ListGroupItem>{item?.quantity}</ListGroupItem>
                     }
+                    <ListGroupItem>Sold: {item?.sold}</ListGroupItem>
                     <ListGroupItem>Supplier: {item?.supplier}</ListGroupItem>
                     <ListGroupItem>Email: {item?.email}</ListGroupItem>
                 </ListGroup>
