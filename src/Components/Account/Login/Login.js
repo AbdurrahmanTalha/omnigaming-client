@@ -31,10 +31,11 @@ const Login = () => {
         await signInWithEmailAndPassword(email, pass);
         const { data } = await axios.post('https://morning-thicket-30795.herokuapp.com/login', { email });
         localStorage.setItem('accessToken', data.accessToken)
-        navigate(from, { replace: true });
+        
     }
     if (user) {
         toast("Successfully Logged In")
+        navigate(from, { replace: true });
     }
     
     if (loading) {
