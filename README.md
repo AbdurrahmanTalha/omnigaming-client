@@ -1,5 +1,5 @@
 # [Live Site](https://omnigaming-75275.web.app/)
-[Live Site](httpsomnigamingwww.google.com)
+## [Live Site](httpsomnigamingwww.google.com)
 
 
 * Made Home page
