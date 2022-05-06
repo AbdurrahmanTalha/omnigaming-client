@@ -33,7 +33,7 @@ const AddItem = () => {
                 <input placeholder="Price" type="number" className="mb-2 form-control"{...register("price", { min: 400 })} />
                 <input placeholder="Quantity" type="number" className="mb-2 form-control"{...register("quantity", { min: 5, required: true })} />
                 <input placeholder="Photo URL" type="text" className="mb-2 form-control"{...register("img", { required: true })} />
-
+                <input placeholder="Sold" type="text" className="mb-2 form-control"{...register("sold")} value="0" readOnly />
                 <input type="submit" value="Add Service" className="btn btn-primary" />
             </form>
         </div>

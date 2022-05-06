@@ -35,9 +35,9 @@ const SocialLogin = () => {
             <div className=''>
                 <button
                     onClick={() => signInWithGoogle()}
-                    className='btn signin-btn w-50 d-block mx-auto my-2'>
-                    <img style={{ width: '30px' }} src="https://github.com/ProgrammingHero1/genius-car-service-client-deploy-module-69/blob/main/src/images/social/google.png?raw=true" alt="" />
-                    <span className='px-2'>Google Sign In</span>
+                    className='btn signin-btn d-block mx-auto my-2 text-center w-100'>
+                    <img style={{ width: '30px' }} className="img-fluid" src="https://github.com/ProgrammingHero1/genius-car-service-client-deploy-module-69/blob/main/src/images/social/google.png?raw=true" alt="" />
+                    Google Sign In
                 </button>
 
 

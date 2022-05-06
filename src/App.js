@@ -1,21 +1,22 @@
-import './App.css';
-import { Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Home from './Components/Home/Home';
-import Footer from './Components/Footer/Footer';
-import Register from './Components/Account/Register/Register';
+import { Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
-import RequireAuth from './Components/Account/RequireAuth/RequireAuth';
-import ManageItem from './Components/ManageItem/ManageItem';
-import Login from './Components/Account/Login/Login';
-import ManageInv from './Components/ManageInv/ManageInv';
-import AddItem from './Components/AddItem/AddItem';
-import Blogs from './Components/Blogs/Blogs';
-import NotFound from './Components/NotFound/NotFound';
 import 'react-toastify/dist/ReactToastify.css';
+import './App.css';
+// Way To many imports
+import Login from './Components/Account/Login/Login';
+import Register from './Components/Account/Register/Register';
+import RequireAuth from './Components/Account/RequireAuth/RequireAuth';
+import AddItem from './Components/AddItem/AddItem';
+import Awards from './Components/Awards/Awards';
+import Blogs from './Components/Blogs/Blogs';
+import Footer from './Components/Footer/Footer';
+import Home from './Components/Home/Home';
+import ManageInv from './Components/ManageInv/ManageInv';
+import ManageItem from './Components/ManageItem/ManageItem';
 import MyItems from './Components/MyItems/MyItems';
 import Header from './Components/Navbar/Navbar';
-import Awards from './Components/Awards/Awards';
+import NotFound from './Components/NotFound/NotFound';
 
 function App() {
   return (
@@ -30,7 +31,7 @@ function App() {
         <Route path="/inventory" element={<RequireAuth><ManageInv></ManageInv></RequireAuth>}></Route>
         <Route path="/addItem" element={<RequireAuth><AddItem></AddItem></RequireAuth>}></Route>
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
-        <Route path="/myItems" element={<MyItems></MyItems>}></Route>
+        <Route path="/myItems" element={<RequireAuth><MyItems></MyItems></RequireAuth>}></Route>
         <Route path="/awards" element={<Awards></Awards>}></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
 

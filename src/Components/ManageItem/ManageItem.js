@@ -50,9 +50,10 @@ const ManageItem = () => {
         const newQuantity = event.target.quantity.value;
         const quantity = Number(oldQuantity) + Number(newQuantity);
 
+        const sold = Number(item?.sold)
 
         event.preventDefault()
-        const updatedQuantity = { quantity };
+        const updatedQuantity = { quantity, sold };
         const url = `https://morning-thicket-30795.herokuapp.com/item/${itemId}`;
         fetch(url, {
             method: 'PUT',
@@ -81,7 +82,7 @@ const ManageItem = () => {
                     <ListGroupItem>ID: {item?._id}</ListGroupItem>
                     <ListGroupItem>Price: ${item?.price}</ListGroupItem>
                     {
-                        item?.quantity < 1 ? <ListGroupItem>Out Of Stock</ListGroupItem> : <ListGroupItem>{item?.quantity}</ListGroupItem>
+                        item?.quantity < 1 ? <ListGroupItem>Out Of Stock</ListGroupItem> : <ListGroupItem>Quantity: {item?.quantity}</ListGroupItem>
                     }
                     <ListGroupItem>Sold: {item?.sold}</ListGroupItem>
                     <ListGroupItem>Supplier: {item?.supplier}</ListGroupItem>

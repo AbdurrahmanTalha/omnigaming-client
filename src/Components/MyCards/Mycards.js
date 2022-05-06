@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Card } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Mycards = items => {
     const [item, setItem] = useState([])
+    const navigate = useNavigate();
     useEffect(() => {
         fetch('https://morning-thicket-30795.herokuapp.com/item')
             .then(res => res.json())
@@ -11,10 +12,10 @@ const Mycards = items => {
     }, [item]);
 
     const handleItemDelete = id => {
+        const url = `https://morning-thicket-30795.herokuapp.com/item/${id}`;
         const proceed = window.confirm('Are you sure you want to delete?');
         if (proceed) {
             console.log('deleting item with id, ', id);
-            const url = `https://morning-thicket-30795.herokuapp.com/item/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -26,6 +27,9 @@ const Mycards = items => {
                     }
                 })
         }
+    }
+    const navigateUpdate = id => {
+        navigate(`inventory/${id}`)
     }
     return (
         <div className="col-md-4 my-5">
@@ -40,7 +44,10 @@ const Mycards = items => {
                     <p>Email: {items.items.email}</p>
                 </Card.Body>
 
-                <button onClick={() => handleItemDelete(items.items._id)} className="btn btn-primary w-50 mx-auto mb-3">Remove</button>
+                <div className="d-flex justify-content-center align-items-center w-100">
+                    <button onClick={() => handleItemDelete(items.items._id)} className="btn btn-primary w-25 me-3">Remove</button>
+                    <button onClick={() => navigateUpdate(items.items._id)} className="btn btn-primary w-25 ">Update</button>
+                </div>
             </Card>
         </div>
     );
