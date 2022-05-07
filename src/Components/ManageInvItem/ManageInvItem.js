@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Card } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const ManageInvitem = items => {
     const [item, setItem] = useState([])
+    const navigate = useNavigate()
     useEffect(() => {
         fetch('https://morning-thicket-30795.herokuapp.com/item')
             .then(res => res.json())
@@ -28,6 +29,9 @@ const ManageInvitem = items => {
                 })
         }
     }
+    const navigateUpdate = id => {
+        navigate(`/inventory/${id}`)
+    }
     return (
         <div className="col-md-4 my-5">
             <Card >
@@ -44,7 +48,10 @@ const ManageInvitem = items => {
                     <p>Email: {email}</p>
                 </Card.Body>
 
-                <button onClick={() => handleItemDelete(items.item._id)} className="btn btn-primary w-50 mx-auto mb-3">Remove</button>
+                <div>
+                    <button onClick={() => handleItemDelete(items.item._id)} className="btn btn-primary w-25  mb-3">Remove</button>
+                    <button onClick={() => navigateUpdate(items.item._id)} className="btn btn-primary w-25 ms-2  mb-3">Update</button>
+               </div>
             </Card>
         </div>
 

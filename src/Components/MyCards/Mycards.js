@@ -29,7 +29,7 @@ const Mycards = items => {
         }
     }
     const navigateUpdate = id => {
-        navigate(`inventory/${id}`)
+        navigate(`/inventory/${id}`)
     }
     return (
         <div className="col-md-4 my-5">
