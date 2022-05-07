@@ -25,17 +25,16 @@ const Login = () => {
     let from = location.state?.from?.pathname || "/";
     // Login
     const loginWithEmail = async e => {
+        e.preventDefault()
         const email = emailRef.current.value;;
         const pass = passRef.current.value;
-        e.preventDefault()
         await signInWithEmailAndPassword(email, pass);
         const { data } = await axios.post('https://morning-thicket-30795.herokuapp.com/login', { email });
         localStorage.setItem('accessToken', data.accessToken)
-        toast("Successfully Logged In")
-        navigate(from, { replace: true });
-    }
-    if (user) {
-
+        if (user) {
+            toast("Successfully Logged In")
+            navigate(from, { replace: true });
+        }
     }
 
     if (loading) {
