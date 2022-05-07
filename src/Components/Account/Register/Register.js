@@ -37,8 +37,6 @@ const Register = () => {
                         sendEmailVerification(auth.currentUser)
                             .then(() => {
                                 toast("We have sended a email verification.")
-
-
                                 navigate(from, { replace: true })
 
                             });
