@@ -4,7 +4,7 @@ const useItemDetail = itemId => {
     const [item, setItem] = useState({});
 
     useEffect(() => {
-        const url = `https://morning-thicket-30795.herokuapp.com/item/${itemId}`;
+        const url = `https://frozen-meadow-07188.herokuapp.com/item/${itemId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setItem(data));

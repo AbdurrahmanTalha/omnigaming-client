@@ -8,7 +8,7 @@ const ManageItem = () => {
     const { itemId } = useParams();
     const [item, setItem] = useState();
     useEffect(() => {
-        const url = `https://morning-thicket-30795.herokuapp.com/item/${itemId}`;
+        const url = `https://frozen-meadow-07188.herokuapp.com/item/${itemId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -25,7 +25,7 @@ const ManageItem = () => {
             const quantity = item.quantity - 1;
             const sold = Number(item?.sold + 1)
             const updatedQuantity = { quantity, sold };
-            const url = `https://morning-thicket-30795.herokuapp.com/item/${itemId}`;
+            const url = `https://frozen-meadow-07188.herokuapp.com/item/${itemId}`;
             console.log(quantity, sold);
             fetch(url, {
                 method: 'PUT',
@@ -54,7 +54,7 @@ const ManageItem = () => {
 
         event.preventDefault()
         const updatedQuantity = { quantity, sold };
-        const url = `https://morning-thicket-30795.herokuapp.com/item/${itemId}`;
+        const url = `https://frozen-meadow-07188.herokuapp.com/item/${itemId}`;
         fetch(url, {
             method: 'PUT',
             headers: {

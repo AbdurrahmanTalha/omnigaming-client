@@ -29,11 +29,11 @@ const Login = () => {
         const email = emailRef.current.value;;
         const pass = passRef.current.value;
         await signInWithEmailAndPassword(email, pass);
-        const { data } = await axios.post('https://morning-thicket-30795.herokuapp.com/login', { email });
+        const { data } = await axios.post('https://frozen-meadow-07188.herokuapp.com/login', { email });
         localStorage.setItem('accessToken', data.accessToken)
         navigate(from, { replace: true });
     }
-   
+
     if (loading) {
         return <Loading></Loading>
     }

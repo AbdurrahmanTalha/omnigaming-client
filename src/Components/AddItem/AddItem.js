@@ -6,7 +6,7 @@ const AddItem = () => {
     const [user] = useAuthState(auth);
     const { register, handleSubmit } = useForm();
     const onSubmit = (data, event) => {
-        fetch('https://morning-thicket-30795.herokuapp.com/item', {
+        fetch('https://frozen-meadow-07188.herokuapp.com/item', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -24,7 +24,7 @@ const AddItem = () => {
         <div className="w-50 mx-auto">
             <h2>Add a computer</h2>
             <form onSubmit={handleSubmit(onSubmit)} className="d-flex flex-column my-5">
-                <input placeholder="Computer Name" className="mb-2 form-control" readOnly type="email" value={user.email} {...register("email")} required />
+                <input placeholder="Email" className="mb-2 form-control" readOnly type="email" value={user.email} {...register("email")} required />
                 <input placeholder="Computer Name" type="text" className="mb-2 form-control" {...register("name", { required: true })} />
                 <input placeholder="Supplier" type="text" className="mb-2 form-control" {...register("supplier", { required: true })} />
 

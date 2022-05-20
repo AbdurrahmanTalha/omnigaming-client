@@ -5,7 +5,7 @@ import ManageInvItem from '../ManageInvItem/ManageInvItem';
 const ManageInv = () => {
     const [items, setItem] = useState([])
     useEffect(() => {
-        fetch('https://morning-thicket-30795.herokuapp.com/item')
+        fetch('https://frozen-meadow-07188.herokuapp.com/item')
             .then(res => res.json())
             .then(data => setItem(data))
     }, [items])

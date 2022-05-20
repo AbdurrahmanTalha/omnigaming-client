@@ -6,13 +6,13 @@ const Mycards = items => {
     const [item, setItem] = useState([])
     const navigate = useNavigate();
     useEffect(() => {
-        fetch('https://morning-thicket-30795.herokuapp.com/item')
+        fetch('https://frozen-meadow-07188.herokuapp.com/item')
             .then(res => res.json())
             .then(data => setItem(data));
     }, [item]);
 
     const handleItemDelete = id => {
-        const url = `https://morning-thicket-30795.herokuapp.com/item/${id}`;
+        const url = `https://frozen-meadow-07188.herokuapp.com/item/${id}`;
         const proceed = window.confirm('Are you sure you want to delete?');
         if (proceed) {
             console.log('deleting item with id, ', id);

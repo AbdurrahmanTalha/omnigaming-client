@@ -6,7 +6,7 @@ const ManageInvitem = items => {
     const [item, setItem] = useState([])
     const navigate = useNavigate()
     useEffect(() => {
-        fetch('https://morning-thicket-30795.herokuapp.com/item')
+        fetch('https://frozen-meadow-07188.herokuapp.com/item')
             .then(res => res.json())
             .then(data => setItem(data));
     }, []);
@@ -16,7 +16,7 @@ const ManageInvitem = items => {
         const proceed = window.confirm('Are you sure you want to delete?');
         if (proceed) {
             console.log('deleting user with id, ', id);
-            const url = `https://morning-thicket-30795.herokuapp.com/item/${id}`;
+            const url = `https://frozen-meadow-07188.herokuapp.com/item/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -51,7 +51,7 @@ const ManageInvitem = items => {
                 <div>
                     <button onClick={() => handleItemDelete(items.item._id)} className="btn btn-primary w-25  mb-3">Remove</button>
                     <button onClick={() => navigateUpdate(items.item._id)} className="btn btn-primary w-25 ms-2  mb-3">Update</button>
-               </div>
+                </div>
             </Card>
         </div>
 
