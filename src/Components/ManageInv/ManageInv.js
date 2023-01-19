@@ -5,7 +5,7 @@ import ManageInvItem from '../ManageInvItem/ManageInvItem';
 const ManageInv = () => {
     const [items, setItem] = useState([])
     useEffect(() => {
-        fetch('https://frozen-meadow-07188.herokuapp.com/item')
+        fetch('https://omnigaming.onrender.com/item')
             .then(res => res.json())
             .then(data => setItem(data))
     }, [items])

@@ -6,7 +6,7 @@ const ManageInvitem = items => {
     const [item, setItem] = useState([])
     const navigate = useNavigate()
     useEffect(() => {
-        fetch('https://frozen-meadow-07188.herokuapp.com/item')
+        fetch('https://omnigaming.onrender.com/item')
             .then(res => res.json())
             .then(data => setItem(data));
     }, []);
@@ -16,7 +16,7 @@ const ManageInvitem = items => {
         const proceed = window.confirm('Are you sure you want to delete?');
         if (proceed) {
             console.log('deleting user with id, ', id);
-            const url = `https://frozen-meadow-07188.herokuapp.com/item/${id}`;
+            const url = `https://omnigaming.onrender.com/item/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

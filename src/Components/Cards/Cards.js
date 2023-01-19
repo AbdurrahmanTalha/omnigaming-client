@@ -5,8 +5,8 @@ import ComputerCards from '../Card/ComputerCards';
 const Cards = () => {
     const [computers, setComputers] = useState([])
     useEffect(() => {
-        // https://frozen-meadow-07188.herokuapp.com/
-        fetch('https://frozen-meadow-07188.herokuapp.com/item/home')
+        // https://omnigaming.onrender.com/
+        fetch('https://omnigaming.onrender.com/item/home')
             .then(res => res.json())
             .then(data => setComputers(data))
     }, [])

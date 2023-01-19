@@ -6,7 +6,7 @@ const AddItem = () => {
     const [user] = useAuthState(auth);
     const { register, handleSubmit } = useForm();
     const onSubmit = (data, event) => {
-        fetch('https://frozen-meadow-07188.herokuapp.com/item', {
+        fetch('https://omnigaming.onrender.com/item', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

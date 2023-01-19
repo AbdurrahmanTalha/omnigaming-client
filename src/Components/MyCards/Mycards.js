@@ -6,13 +6,13 @@ const Mycards = items => {
     const [item, setItem] = useState([])
     const navigate = useNavigate();
     useEffect(() => {
-        fetch('https://frozen-meadow-07188.herokuapp.com/item')
+        fetch('https://omnigaming.onrender.com/item')
             .then(res => res.json())
             .then(data => setItem(data));
     }, [item]);
 
     const handleItemDelete = id => {
-        const url = `https://frozen-meadow-07188.herokuapp.com/item/${id}`;
+        const url = `https://omnigaming.onrender.com/item/${id}`;
         const proceed = window.confirm('Are you sure you want to delete?');
         if (proceed) {
             console.log('deleting item with id, ', id);
